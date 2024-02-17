@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card,Button,Form,Navbar, Tab,Tabs,Spinner,Placeholder  } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
@@ -58,7 +57,6 @@ export const MainPage = () => {
     </Container>
         <Container className= "vh-100" style={{ paddingTop: '1rem', paddingBottom: '2rem',justifyContent: "center", alignItems: "center" }} id = "tourslist">
           <Container></Container>
-          {/* <h2 style={{ paddingLeft: '6rem', paddingBottom: '1rem',justifyContent: "center", alignItems: "center"  }}>Наши туры:</h2> */}
           <Row style={{ justifyContent: "center", alignItems: "center", marginTop:'2rem' }}>
             {/* {tours?.map((tour, index) => ( */}
               <Col xs="auto" style={{ paddingBottom: '1rem' }}>

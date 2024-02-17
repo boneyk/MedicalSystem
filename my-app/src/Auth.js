@@ -2,7 +2,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "./components/Header";
 
 
 export const Auth = () => {
@@ -42,17 +42,15 @@ export const Auth = () => {
 
                       <div className="d-grid mb-3" style={{justifyContent: "center", alignItems: "center",display: "flex"}}>
                         <Button
-                          variant="primary"
+                          variant="secondary"
                           type="submit"
                           style={{
-                            backgroundColor: "#BFBFBF",
-                            borderColor: "#BFBFBF",
                             width:"200px",
                             justifyContent: "center", alignItems: "center",display: "flex",
                           }}>
                           <Link
                             style={{
-                              textDecoration: "none",color: "black",
+                              textDecoration: "none",color:'white'
                             }}
                             to="/patients"
                             >

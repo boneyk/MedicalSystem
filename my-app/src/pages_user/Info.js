@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card,Button,Form,Navbar, Tab,Tabs,Spinner,Placeholder  } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../components/Header";
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
@@ -152,7 +151,14 @@ export const Info = () => {
             <span style={{ marginLeft: '10px',fontSize:'25px' }}>Кровь</span>
           </div>
           {showBlood && (
-            <div>лалалалалаллаал
+            <div>Проведенный анализ: общий анализ крови<br/>
+            Результаты анализа:<br/>
+- Гемоглобин: 14 г/дл<br/>
+- Эритроциты: 4.5 млн/мкл<br/>
+- Лейкоциты: 7 тыс/мкл<br/>
+- Тромбоциты: 250 тыс/мкл<br/>
+- Общий холестерин: 180 мг/дл<br/>
+Дата проведения анализа: 18 июня 2023
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
@@ -205,9 +211,11 @@ export const Info = () => {
                 <option value="5">5 группа здоровья</option>
             </Form.Select>
         </Form.Group>
-        <Button style={{backgroundColor: "#ffffff",borderColor:"#ffffff"}}>
-            <h1 style={{fontSize:"15px",color:"black"}}>Подтвердить</h1>
+        <Row style={{justifyContent: "right", alignItems: "right"}}>
+        <Button variant="secondary" style={{width:"140px",marginBottom:"1rem",marginRight:"1rem"}}>
+            Подтвердить
         </Button>
+        </Row>
             </Col>
         </Row>
     </Card>   
