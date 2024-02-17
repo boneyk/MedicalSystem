@@ -13,7 +13,7 @@ export const Auth = () => {
           <Col md={10} lg={5} xs={12}>
             <Card
               className="shadow px-4"
-              style={{ backgroundColor: "#67D1FF", borderColor: "#67D1FF",borderRadius:'2rem' }}
+              style={{ backgroundColor: "#B8CBE9", borderColor: "#67D1FF",borderRadius:'2rem' }}
             >
               <Card.Body>
                 <div className="mb-3 mt-md-4">

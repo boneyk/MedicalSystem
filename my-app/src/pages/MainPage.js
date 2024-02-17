@@ -7,13 +7,17 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 
 export const MainPage = () => {
+  const handleCardClick = () => {
+    // (token === null) ? setStatus(false) : setStatus(true);
+      window.location.href = `/patient/info`;
+  };
     return (
         <div style={{background:"#EAEAE2"}}>
-<Container style={{ background: '#AFD6A7', marginBottom: '1rem',borderRadius:'1rem'}} >
-      <Navbar collapseOnSelect expand="lg"  className="justify-content-between" style={{ background: '#AFD6A7', display: "flex", alignItems: "center", justifyContent: "flex-center", marginBottom: '1rem',borderRadius:'1rem' }}>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav" className="mr-auto">
-        <Form inline style={{ marginLeft: '4rem', display: "flex", alignItems: "center" }}>
+<Container style={{ background: '#AFD6A7',borderRadius:'1rem'}} >
+      <Navbar collapseOnSelect expand="lg"  className="justify-content-between" style={{ background: '#AFD6A7', marginBottom: '1rem',borderRadius:'1rem' }}>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
+          <Navbar.Collapse id="responsive-navbar-nav" className="mr-auto" >
+        <Form inline style={{ marginLeft: '4rem'}}>
 
           <Row className = "d-flex justify-content-center align-items-center"> 
             <Col xs="auto">
@@ -52,14 +56,13 @@ export const MainPage = () => {
         </Navbar.Collapse>
       </Navbar>
     </Container>
-            
         <Container className= "vh-100" style={{ paddingTop: '1rem', paddingBottom: '2rem',justifyContent: "center", alignItems: "center" }} id = "tourslist">
           <Container></Container>
           {/* <h2 style={{ paddingLeft: '6rem', paddingBottom: '1rem',justifyContent: "center", alignItems: "center"  }}>Наши туры:</h2> */}
           <Row style={{ justifyContent: "center", alignItems: "center", marginTop:'2rem' }}>
             {/* {tours?.map((tour, index) => ( */}
               <Col xs="auto" style={{ paddingBottom: '1rem' }}>
-                <Card className="text-center"style={{ width: '18rem', background: '#67D1FF', borderRadius: '3rem' }}>
+                <Card className="text-center"style={{ width: '18rem', backgroundColor: "#B8CBE9", borderRadius: '3rem' }} onClick={() => handleCardClick()}>
                   <Card.Body>
                   <Card.Img src={'img/human.png'} variant="top" style={{ width: "200px", height: "200px" }} />
                     <Card.Title>Фамилия Имя Отчество</Card.Title>

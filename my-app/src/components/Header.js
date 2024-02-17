@@ -7,13 +7,13 @@ const Header = () => (
     <Container style={{ borderBottom: '1px solid black', background:"#EAEAE2", padding:'1px' }} fluid>
         <Row xs="auto" className="justify-content-center mt-4" style={{ padding: '1rem'}}>
         <Container md = {1}>
-            <img src="/img/banner.png" width={'90'} height={'90'} alt="tourAgency icon"/>
+            <img src="/img/banner.png" width={'120'} height={'120'} alt="tourAgency icon"/>
         </Container>
         <Container md = {1} className="d-flex align-items-center justify-content-left">
             <h1 style={{ fontSize: "30px", textAlign: "center" }} className="text-center ">Медицинская система</h1>
         </Container>
         <Container md = {1} className="d-flex align-items-center justify-content-right">
-            <h1 style={{ fontSize: "25px", textAlign: "bottom" }}>Выйти</h1>
+            <h1 style={{ fontSize: "25px", textAlign: "bottom" }} to= '/'>Выйти</h1>
         </Container>
         <Nav>
         <Nav.Link eventKey="catalog">

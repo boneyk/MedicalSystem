@@ -5,6 +5,7 @@ import { Auth } from "./pages/Auth";
 import { NotFound } from "./pages/NotFound";
 import { MainPage } from "./pages/MainPage"
 import Header from "./components/Header";
+import { Info } from "./pages/Info";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Auth />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/patients" element={<MainPage />} />
+          <Route path="/patient/info" element={<Info />} />
         </Routes>
       </Router>
       </>
