@@ -12,7 +12,7 @@ export const MainPage = () => {
   };
     return (
         <div style={{background:"#EAEAE2"}}>
-<Container style={{ background: '#AFD6A7',borderRadius:'1rem'}} >
+<Container style={{ background: '#AFD6A7',borderRadius:'1rem'}} md={10} lg={6}>
       <Navbar collapseOnSelect expand="lg"  className="justify-content-between" style={{ background: '#AFD6A7', marginBottom: '1rem',borderRadius:'1rem' }}>
       <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
           <Navbar.Collapse id="responsive-navbar-nav" className="mr-auto" >
@@ -42,13 +42,14 @@ export const MainPage = () => {
               <InputGroup className="mb-3 mt-3" style={{ maxWidth: '12rem' }}>
                 <InputGroup.Text id="basic-addon1">Пол:</InputGroup.Text>
                 <Form.Control
-                type="number"
+                type="text"
               />
               </InputGroup>
             </Col>
 
             <Col xs="auto" className="mb-3 mt-3">
-              <Button type="submit" style={{ background: '#3C5A5C' }}>Найти</Button>
+            <img src={`/img/search.png`} style={{ width: "40px", height: "40px", marginRight: "20px",marginBottom:"1rem" }} />
+              <Button type="submit" style={{ background: '#3C5A5C', borderColor:"#3C5A5C" }}>Найти</Button>
             </Col>
           </Row>
         </Form>

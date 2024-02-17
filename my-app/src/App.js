@@ -13,7 +13,7 @@ import { DelAcc } from "./pages_manager/DelAcc";
 function App() {
   return (
     <>
-    <Header/>
+    <Header />
       <Router>
         <Routes>
           <Route path="/" element={<Auth />} />
