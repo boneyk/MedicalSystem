@@ -204,6 +204,7 @@ export const Info = () => {
                 <Form.Group className="mb-3" controlId="selectedHealthGroup">
             <Form.Label className="text-center">Установленная группа здоровья:</Form.Label>
             <Form.Select aria-label="Default select example">
+                <option value="0">Группа здоровья не выбрана</option>
                 <option value="1">1 группа здоровья</option>
                 <option value="2">2 группа здоровья</option>
                 <option value="3">3 группа здоровья</option>
