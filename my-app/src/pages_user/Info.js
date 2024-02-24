@@ -13,6 +13,9 @@ export const Info = () => {
     const [showBlood, setShowBlood] = useState(false);
     const [showVision, setShowVision] = useState(false);
     const [showHormones, setShowHormones] = useState(false);
+    const name = localStorage.getItem("name");
+    const DateB = localStorage.getItem("DateB");
+    const city = localStorage.getItem("city");
 
     return (
         <div style={{background:"#EAEAE2"}}>
@@ -34,6 +37,7 @@ export const Info = () => {
             <Form.Control
               type="text"
               name="login"
+              value = {name}
               readOnly
             />
           </Form.Group>
@@ -41,8 +45,9 @@ export const Info = () => {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="text-center">Дата рождения:</Form.Label>
             <Form.Control
-              type="date"
+              type="text"
               name="email"
+              value = {DateB}
               readOnly
             />
           </Form.Group>
@@ -56,6 +61,7 @@ export const Info = () => {
                         <Form.Control
                           type="text"
                           name = "sex"
+                          value = "180 см"
                           readOnly
                         />
                       </Form.Group>
@@ -69,6 +75,7 @@ export const Info = () => {
                         <Form.Control
                           type="text"
                           name = "password"
+                          value = "60 кг"
                           readOnly
                         />
                       </Form.Group>
@@ -80,6 +87,7 @@ export const Info = () => {
             <Form.Control
               type="text"
               name="password"
+              value = {city}
               readOnly
             />
           </Form.Group>
@@ -99,7 +107,16 @@ export const Info = () => {
             <span style={{ marginLeft: '10px',fontSize:'25px' }}>Сердце</span>
           </div>
           {showHeard && (
-            <div>лалалалалаллаал
+            <div>Проведенный анализ: ЭКГ с нагрузкой<br/>
+            Результаты анализа:<br/>
+            1. Сердечный ритм: нормальный синусовый ритм.<br/>
+            2. Частота сердечных сокращений: 75 ударов в минуту.<br/>
+            3. Длительность интервалов: PQ - 0,16 сек, QRS - 0,08 сек, QT - 0,36 сек.<br/>
+            4. Сегменты: ST-сегмент нормальный, T-зубец асимметричный.<br/>
+            5. Особенности зубцов: P - высота 2 мм, Q - отрицательный, R - высота 10 мм, S - высота 5 мм, T - амплитуда 3 мм.<br/>
+            6. Наличие признаков ишемии или инфаркта миокарда: отсутствуют.<br/>
+            7. Оценка проводимости сердца: нормальная.<br/>
+            Дата проведения анализа: 18 июня 2023
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
@@ -112,7 +129,18 @@ export const Info = () => {
             <span style={{ marginLeft: '10px',fontSize:'25px' }}>Сосуды</span>
           </div>
           {showVessels && (
-            <div>лалалалалаллаал
+            <div>Проведенный анализ: биохимия крови<br/>
+            Результаты анализа:<br/>
+            1. Общий белок: 7 г/дл (норма 6-8 г/дл).<br/>
+            2. Глюкоза: 90 мг/дл (норма 70-100 мг/дл).<br/>
+            3. Холестерин: 180 мг/дл (норма менее 200 мг/дл).<br/>
+            4. Билирубин: общий - 0,8 мг/дл (норма 0,3-1,2 мг/дл), прямой - 0,2 мг/дл (норма до 0,3 мг/дл).<br/>
+            5. Мочевина: 20 мг/дл (норма 10-50 мг/дл).<br/>
+            6. Креатинин: 0,8 мг/дл (норма 0,6-1,2 мг/дл).<br/>
+            7. АЛТ (аланинаминотрансфераза): 20 Ед/л (норма до 40 Ед/л).<br/>
+            8. АСТ (аспартатаминотрансфераза): 25 Ед/л (норма до 35 Ед/л).<br/>
+            9. Щелочная фосфатаза: 70 Ед/л (норма 30-120 Ед/л).<br/>
+            Дата проведения анализа: 10 июня 2023
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
@@ -122,23 +150,21 @@ export const Info = () => {
               style={{ width: '40px', height: '40px', cursor: 'pointer' }}
               onClick={() => setShowKidneys(!showKidneys)}
             />
-            <span style={{ marginLeft: '10px',fontSize:'25px' }}>Почки</span>
+            <span style={{ marginLeft: '10px',fontSize:'25px' }}>Легкие</span>
           </div>
           {showKidneys && (
-            <div>лалалалалаллаал
-            </div>
-          )}
-          <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
-            <img
-              src="/img/sort_down.png"
-              alt="arrow"
-              style={{ width: '40px', height: '40px', cursor: 'pointer' }}
-              onClick={() => setShowPancreas(!showPancreas)}
-            />
-            <span style={{ marginLeft: '10px',fontSize:'25px' }}>Поджелудочная железа</span>
-          </div>
-          {showPancreas && (
-            <div>лалалалалаллаал
+            <div>Проведенный анализ: флюорография<br/>
+            Результаты анализа:<br/>
+            1. Состояние легких: отсутствие патологических изменений.<br/>
+            2. Диафрагма: четкие контуры, без сдвига.<br/>
+            3. Корни легких: в норме, без увеличения.<br/>
+            4. Плевральные впадины: свободные, без выпота.<br/>
+            5. Средостение: без патологий или опухолей.<br/>
+            6. Медиастинальные органы: нормальные размеры и контуры.<br/>
+            7. Костные структуры грудной клетки: без видимых изменений.<br/>
+            8. Правый легкий: прозрачный, без инфильтратов или уплотнений.<br/>
+            9. Левый легкий: прозрачный, без признаков патологии.<br/>
+            Дата проведения анализа: 10 июня 2023
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
@@ -158,7 +184,7 @@ export const Info = () => {
 - Лейкоциты: 7 тыс/мкл<br/>
 - Тромбоциты: 250 тыс/мкл<br/>
 - Общий холестерин: 180 мг/дл<br/>
-Дата проведения анализа: 18 июня 2023
+Дата проведения анализа: 12 июня 2023
             </div>
           )}
           <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
@@ -171,20 +197,16 @@ export const Info = () => {
             <span style={{ marginLeft: '10px',fontSize:'25px' }}>Зрение</span>
           </div>
           {showVision && (
-            <div>лалалалалаллаал
-            </div>
-          )}
-          <div style={{ display: 'flex', alignItems: 'center',padding: "1rem" }}>
-            <img
-              src="/img/sort_down.png"
-              alt="arrow"
-              style={{ width: '40px', height: '40px', cursor: 'pointer' }}
-              onClick={() => setShowHormones(!showHormones)}
-            />
-            <span style={{ marginLeft: '10px',fontSize:'25px' }}>Уровень гормонов</span>
-          </div>
-          {showHormones && (
-            <div>лалалалалаллаал
+            <div>Проведенный анализ: Офтальмоскопия<br/>
+            Результаты анализа:<br/>
+            1. Дальнозоркость: +1,25 D (диоптрии) на правом глазу и +1,50 D на левом глазу.<br/>
+2. Близорукость: -2,00 D на правом глазу и -1,75 D на левом глазу.<br/>
+3. Зрительная острота: 1,0 на обоих глазах (норма 1,0 или 100%).<br/>
+4. Давление в глазах: 16 мм рт.ст. на правом глазу и 15 мм рт.ст. на левом глазу.<br/>
+5. Цветоощущение: нормальное, отсутствуют нарушения.<br/>
+6. Поле зрения: широкое, без дефектов или ослаблений.<br/>
+7. Рефракция: астигматизм 0,75 D на обоих глазах.<br/>
+Дата проведения анализа: 18 июня 2023
             </div>
           )}
         </Card>

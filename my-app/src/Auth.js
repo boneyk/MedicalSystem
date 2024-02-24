@@ -1,4 +1,3 @@
-
 import React, { useState,setErrorMessage, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -15,8 +14,11 @@ const [passwordError, setPasswordError] = useState("Пароль не может
 const [formValid, setFormValid] = useState(false);
 const [success, setSuccess] = useState(false);
 const [successError, setSuccessError] = useState("Неправильно введен логин или пароль");
+localStorage.setItem("role", 0);
+
 
   useEffect(() => {
+    localStorage.setItem("role", "nobody");
     console.log("токен из хранилища:", localStorage.getItem("token"));
     if (!loginDirty && !passwordDirty && !success) {
       setFormValid(true);
@@ -52,7 +54,17 @@ const [successError, setSuccessError] = useState("Неправильно вве�
         break;
     }
   };
-  
+  const handleSubmit = (log,pass) => {
+    if(log === "doctor" && pass === "doctor"){
+      localStorage.setItem("role", "doctor");
+      window.location.href = `/patients`;
+    }else if(log === "admin" && pass === "admin"){
+      localStorage.setItem("role", "admin");
+      window.location.href = `/manager/create`;
+    }else{
+      localStorage.setItem("role", "nobody");
+    }
+  }
     return (
     <div style={{background:"#EAEAE2"}}>
 <Container style={{ padding:"1rem",justifyContent: "center", alignItems: "center" }}>
@@ -101,15 +113,10 @@ const [successError, setSuccessError] = useState("Неправильно вве�
                             width:"200px",
                             justifyContent: "center", alignItems: "center",display: "flex",
                           }}onAbort={!success}
-                          disabled = {!formValid}>
-                          <Link
-                            style={{
-                              textDecoration: "none",color:'white'
-                            }}
-                            to="/patients"
-                            >
+                          disabled = {!formValid}
+                          onClick={handleSubmit(login,password)}
+                          >
                             Войти
-                          </Link>
                         </Button>
                         {(success) && <div style ={{color:'red'}}>{successError}</div>}
                       </div>
